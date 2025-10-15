@@ -1,0 +1,31 @@
+<h2 class="mb-3">Modifier produit</h2>
+
+<ng-container *ngIf="p as prod; else loading">
+    <form #f="ngForm" (ngSubmit)="modifier(f)" class="row g-3">
+        <div class="col-12 col-md-6">
+            <label for="lib" class="form-label">Libellé</label>
+            <input id="lib" type="text" required [ngModel]="prod.libelle" name="lib" class="form-control" />
+        </div>
+
+        <div class="col-12 col-md-6">
+            <label for="prix" class="form-label">Prix</label>
+            <div class="input-group">
+                <input id="prix" type="number" required [ngModel]="prod.prix" name="prix" class="form-control" />
+                <span class="input-group-text">DT</span>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <label for="dc" class="form-label">Date de création</label>
+            <input id="dc" type="date" required [ngModel]="prod.dateCreation | date:'yyyy-MM-dd'" name="dc" class="form-control" />
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Modifier</button>
+        </div>
+    </form>
+</ng-container>
+
+<ng-template #loading>
+    <div class="alert alert-info">Chargement du produit...</div>
+</ng-template>
