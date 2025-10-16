@@ -1,0 +1,13 @@
+/* Bootstrap CSS */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* Optional global tweaks */
+body {
+	background-color: #f8f9fa;
+}
+
+/* Space below headings */
+h1, h2, h3 {
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+}

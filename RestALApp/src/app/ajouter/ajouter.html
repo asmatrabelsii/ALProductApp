@@ -1,0 +1,25 @@
+<h2 class="mb-3">Ajouter un produit</h2>
+
+<form #f="ngForm" (ngSubmit)="ajouter(f)" class="row g-3">
+    <div class="col-12 col-md-6">
+        <label for="lib" class="form-label">Libellé</label>
+        <input id="lib" type="text" required ngModel name="lib" class="form-control" />
+    </div>
+
+    <div class="col-12 col-md-6">
+        <label for="prix" class="form-label">Prix</label>
+        <div class="input-group">
+            <input id="prix" type="number" required ngModel name="prix" class="form-control" />
+            <span class="input-group-text">DT</span>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+        <label for="dc" class="form-label">Date de création</label>
+        <input id="dc" type="date" required ngModel name="dc" class="form-control" />
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-success">Ajouter</button>
+    </div>
+</form>

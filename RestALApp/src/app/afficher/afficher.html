@@ -1,0 +1,29 @@
+<h3 class="mb-3">Liste de tous les produits</h3>
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Libellé</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Date de création</th>
+                <th scope="col" class="text-end">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of lesproduits">
+                <td>{{ p.id }}</td>
+                <td>{{ p.libelle }}</td>
+                <td>
+                    <span class="badge bg-secondary">{{ p.prix | number:'1.2-2' }} DT</span>
+                </td>
+                <td>{{ p.dateCreation | date: 'shortDate' }}</td>
+                <td class="text-end">
+                    <a class="btn btn-sm btn-outline-danger me-2" routerLink="/supprimer/{{ p.id }}">Supprimer</a>
+                    <a class="btn btn-sm btn-primary" routerLink="/modifier/{{ p.id }}">Modifier</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
